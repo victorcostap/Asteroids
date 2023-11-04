@@ -5,8 +5,9 @@ public class ScreenMovementContraint : MonoBehaviour
     private Camera _camera;
     private Vector2 _screenBounds;
 
-    private float _objectWidth;
-    private float _objectHeight;
+    // private float _objectWidth;
+    // private float _objectHeight;
+    private Vector2 _screenResolution;
 
     private void Start()
     {
@@ -17,9 +18,10 @@ public class ScreenMovementContraint : MonoBehaviour
             return;
         }
 
-        _objectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x;
-        _objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y;
+        // _objectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x;
+        // _objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y;
 
+        _screenResolution = new Vector2(Screen.width, Screen.height);
         _screenBounds = _camera.ScreenToWorldPoint(new Vector3(Screen.width,
             Screen.height,
             _camera.transform.position.z));
@@ -27,6 +29,14 @@ public class ScreenMovementContraint : MonoBehaviour
 
     private void Update()
     {
+        if (!_screenResolution.Equals(new Vector2(Screen.width, Screen.height)))
+        {
+            _screenResolution = new Vector2(Screen.width, Screen.height);
+            _screenBounds = _camera.ScreenToWorldPoint(new Vector3(Screen.width,
+                Screen.height,
+                _camera.transform.position.z)); 
+        }
+        
         var viewPos = transform.position;
         viewPos.x = Mathf.Clamp(viewPos.x, -_screenBounds.x, _screenBounds.x);
         viewPos.y = Mathf.Clamp(viewPos.y, -_screenBounds.y, _screenBounds.y);

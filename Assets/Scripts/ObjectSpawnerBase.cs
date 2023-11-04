@@ -1,17 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawnerBase : MonoBehaviour
+public class ObjectSpawnerBase: MonoBehaviour
 {
     public GameObject objectPrefab;
     public uint maxObjects = 10;
     private List<GameObject> _objectPool = new List<GameObject>();
     private List<int> _availableObjects = new List<int>();
     
-    public float spawnRatePerMinute = 30;
-    public float maxSpawnRatePerMinute = 60;
-    public float spawnRateIncrement = 1;
-
     protected void Start()
     {
         for (var i = 0; i < maxObjects; ++i)

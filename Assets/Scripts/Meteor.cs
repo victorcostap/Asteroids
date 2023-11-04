@@ -12,12 +12,6 @@ public class Meteor : PooledObject
         _collider = gameObject.GetComponent<Collider>();
         _rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
-    private void OnCollisionEnter(Collision coll)
-    {
-        if(coll.gameObject.tag.Equals("Enemy")){
-            Physics.IgnoreCollision(_collider, coll.collider);
-        }
-    }
     
     private new void OnBecameInvisible()
     {

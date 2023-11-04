@@ -5,8 +5,11 @@ using Random = UnityEngine.Random;
 public class MeteorSpawner : ObjectSpawnerBase
 {
     private float _spawnNext;
-
     private Camera _camera;
+    
+    public float spawnRatePerMinute = 30;
+    public float maxSpawnRatePerMinute = 60;
+    public float spawnRateIncrement = 1;
     private new void Start()
     {
         _camera = Camera.main;

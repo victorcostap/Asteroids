@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,16 +17,17 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float rotation = rotationSpeed * Input.GetAxis("Rotation") * Time.deltaTime;
-        float thrust = thrustForce * Input.GetAxis("Thrust") * Time.deltaTime;
-        transform.Rotate(Vector3.forward, -rotation);
+        var rotation = rotationSpeed * Input.GetAxis("Rotation") * Time.deltaTime;
+        var thrust = thrustForce * Input.GetAxis("Thrust") * Time.deltaTime;
+        Transform transform1;
+        (transform1 = transform).Rotate(Vector3.forward, -rotation);
         
-        _rigidbody.AddForce(transform.right*thrust);
+        _rigidbody.AddForce(transform1.right*thrust);
     }
 
     private void OnCollisionEnter(Collision coll){
         if(coll.gameObject.tag.Equals("Enemy")){
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

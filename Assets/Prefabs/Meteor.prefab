@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5654460702763651203}
   - component: {fileID: 3234883737240536228}
   - component: {fileID: 2624146796916309405}
-  - component: {fileID: 4247394260942703640}
+  - component: {fileID: 2119579316614242535}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Enemy
@@ -135,7 +135,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.7
   m_Center: {x: -0.33, y: -2.17, z: 0}
---- !u!114 &4247394260942703640
+--- !u!114 &2119579316614242535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +144,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 906239609073585043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca14132c2d2ce248ba12447fc125443, type: 3}
+  m_Script: {fileID: 11500000, guid: 0657302b02424130a2f5d6e07bcee5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -23,12 +23,11 @@ public class ShipMovement : MonoBehaviour
         float thrust = thrustForce * Input.GetAxis("Thrust") * Time.deltaTime;
         transform.Rotate(Vector3.forward, -rotation);
         
-        var cameraTransform = Camera.main.transform;
         _rigidbody.AddForce(transform.right*thrust);
     }
 
-    private void OnCollisionEnter(Collision collider){
-        if(collider.gameObject.tag.Equals("Enemy")){
+    private void OnCollisionEnter(Collision coll){
+        if(coll.gameObject.tag.Equals("Enemy")){
             SceneManager.LoadScene("SampleScene");
         }
     }

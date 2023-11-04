@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -422,8 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e39539e2c843243aa9a0a61c6f6573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 906239609073585043, guid: a9599ffacb14d9e4cadf59e31514596a, type: 3}
-  spawnPerMinute: 30
+  objectPrefab: {fileID: 906239609073585043, guid: a9599ffacb14d9e4cadf59e31514596a, type: 3}
+  maxObjects: 5
+  spawnRatePerMinute: 30
+  maxSpawnRatePerMinute: 60
   spawnRateIncrement: 1
 --- !u!4 &1532312404
 Transform:
@@ -541,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 125
-  thrustForce: 300
+  thrustForce: 2000
 --- !u!54 &1659902058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -551,7 +553,7 @@ Rigidbody:
   m_GameObject: {fileID: 1659902054}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 2.5
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -586,7 +588,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.314816
   m_Height: 5.7550626
@@ -609,7 +611,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Height: 2.9

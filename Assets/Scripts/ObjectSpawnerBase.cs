@@ -12,7 +12,7 @@ public class ObjectSpawnerBase : MonoBehaviour
     public float maxSpawnRatePerMinute = 60;
     public float spawnRateIncrement = 1;
 
-    private void Start()
+    protected void Start()
     {
         for (var i = 0; i < maxObjects; ++i)
         {

@@ -10,11 +10,16 @@ public class PooledObject : MonoBehaviour
         _objectSpawnerBase = spawnerBase;
     }
 
-    protected void OnBecameInvisible()
+    protected void ReturnToPool()
     {
         if (_objectSpawnerBase != null)
         {
             _objectSpawnerBase.ReturnToPool(gameObject);
         }
+    }
+    
+    protected void OnBecameInvisible()
+    {
+        ReturnToPool();
     }
 }

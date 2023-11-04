@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 1659902060}
   - component: {fileID: 1659902057}
   - component: {fileID: 1659902061}
+  - component: {fileID: 1659902062}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -601,7 +602,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
@@ -624,7 +625,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
@@ -644,6 +645,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7e54a1129941bea24da2eb3295a071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1659902062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659902054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9155085cfe41e3b34e5299a6061c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 4358828788905686760, guid: 2a76e6f49104d644b9c179fd936f9d27, type: 3}
+  maxObjects: 100
+  delayMsBullet: 250
+  bulletSpeed: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

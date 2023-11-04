@@ -9,11 +9,24 @@ public class Bullet : PooledObject
     {
         _rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
-    
-    private new void OnBecameInvisible()
+
+    private new void ReturnToPool()
     {
         _rigidbody.velocity = Vector3.zero;
         _rigidbody.rotation = Quaternion.identity;
-        base.OnBecameInvisible();
+        base.ReturnToPool();
+    }
+    
+    private new void OnBecameInvisible()
+    {
+        ReturnToPool();
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Enemy"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -7,6 +7,7 @@ public class MatchScreenBg : MonoBehaviour
     private float _objectWidth;
     private float _objectHeight;
     private float _aspectRatio;
+    public Material material;
 
     // Start is called before the first frame update
     private void Start()
@@ -16,6 +17,11 @@ public class MatchScreenBg : MonoBehaviour
         {
             Debug.LogError("No main camera found.");
             return;
+        }
+
+        if (!material.HasProperty("_MainTex"))
+        {
+            Debug.LogError("Material does nto have MainTex");
         }
 
         _screenResolution = new Vector2(Screen.width, Screen.height);
@@ -37,5 +43,6 @@ public class MatchScreenBg : MonoBehaviour
         var planeHeightScale = 2.0f * _camera.orthographicSize / 10.0f;
         var planeWidthScale = planeHeightScale * _camera.aspect;
         gameObject.transform.localScale = new Vector3(planeWidthScale, planeHeightScale, 1);
+        material.SetTextureScale("_MainTex", new Vector2(planeWidthScale, planeHeightScale));
     }
 }

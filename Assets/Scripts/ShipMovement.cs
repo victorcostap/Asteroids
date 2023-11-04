@@ -9,13 +9,24 @@ public class ShipMovement : MonoBehaviour
     private Rigidbody _rigidbody;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        ProcessMovementShip();
+    }
+
+    private void OnTriggerEnter(Collider other){
+        if(other.gameObject.tag.Equals("Enemy")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    private void ProcessMovementShip()
     {
         var rotation = rotationSpeed * Input.GetAxis("Rotation") * Time.deltaTime;
         var thrust = thrustForce * Input.GetAxis("Thrust") * Time.deltaTime;
@@ -23,11 +34,5 @@ public class ShipMovement : MonoBehaviour
         (transform1 = transform).Rotate(Vector3.forward, -rotation);
         
         _rigidbody.AddForce(transform1.right*thrust);
-    }
-
-    private void OnCollisionEnter(Collision coll){
-        if(coll.gameObject.tag.Equals("Enemy")){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 }

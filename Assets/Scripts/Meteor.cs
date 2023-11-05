@@ -6,6 +6,8 @@ public class Meteor : PooledObject
 {
     private Collider _collider;
     private Rigidbody _rigidbody;
+
+    public int valuePoints = 100;
     
     private void Start()
     {
@@ -29,6 +31,7 @@ public class Meteor : PooledObject
     {
         if (other.gameObject.tag.Equals("Bullet"))
         {
+            ScoreManager.instance.AddPoints(valuePoints);
             gameObject.SetActive(false);
         }
     }

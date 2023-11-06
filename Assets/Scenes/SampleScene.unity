@@ -662,7 +662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 383.6, y: 237.75998}
+  m_AnchoredPosition: {x: 440.8, y: 274.7}
   m_SizeDelta: {x: 160.55, y: 27.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615522195
@@ -939,7 +939,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.314816
   m_Height: 5.7550626
@@ -962,7 +962,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Height: 2.9
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 4358828788905686760, guid: 2a76e6f49104d644b9c179fd936f9d27, type: 3}
-  maxObjects: 100
+  maxObjects: 50
   delayMsBullet: 250
   bulletSpeed: 10
 --- !u!1660057539 &9223372036854775807

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ScreenMovementContraint : MonoBehaviour
+public class ScreenMovementClamp : MonoBehaviour
 {
     private Camera _camera;
     private Vector2 _screenBounds;

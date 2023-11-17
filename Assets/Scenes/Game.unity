@@ -193,7 +193,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 963194227}
-  m_PlaneDistance: 6.4
+  m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -868,6 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557cd9559155bdb41acbbb9efb4f3d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderQueue: 3002
 --- !u!114 &1659902064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,8 +959,8 @@ Transform:
   m_GameObject: {fileID: 1955915874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.207, y: 0.004, z: 0.1}
-  m_LocalScale: {x: 3.2941055, y: 1.6666662, z: 1}
+  m_LocalPosition: {x: -2.207, y: 0.004, z: -0.012}
+  m_LocalScale: {x: 3.162342, y: 1.6, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659902056}
@@ -994,7 +995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074255151272571708, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9074255151272571708, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: m_LocalRotation.w

@@ -5,36 +5,37 @@ public class ObjectSpawnerBase: MonoBehaviour
 {
     public GameObject objectPrefab;
     public uint maxObjects = 10;
-    private List<GameObject> _objectPool = new List<GameObject>();
-    private List<int> _availableObjects = new List<int>();
+
+    private readonly Queue<int> _availableObjects = new Queue<int>();
+    private readonly Dictionary<int, GameObject> _objectPool = new Dictionary<int, GameObject>();
     
     protected void Start()
     {
         for (var i = 0; i < maxObjects; ++i)
         {
             var obj = Instantiate(objectPrefab);
+            var id = obj.GetInstanceID();
             obj.SetActive(false);
             obj.GetComponent<PooledObject>().Initialize(this);
-            _objectPool.Add(obj);
-            _availableObjects.Add(i);
+            _objectPool.Add(id, obj);
+            _availableObjects.Enqueue(id);
         }
     }
     
     public GameObject GetPooledObject()
     {
         if (_availableObjects.Count == 0) return null;
-
-        var i = _availableObjects[0];
-        _availableObjects.RemoveAt(0);
-        return _objectPool[i];
+        
+        var id = _availableObjects.Dequeue();
+        return _objectPool[id];
     }
 
     public void ReturnToPool(GameObject obj)
     {
-        var i = _objectPool.IndexOf(obj);
-        if (i == -1) return;
+        var id = obj.GetInstanceID();
+        if (!_objectPool.ContainsKey(id)) return;
         
         obj.SetActive(false);
-        _availableObjects.Add(i);
+        _availableObjects.Enqueue(id);
     }
 }

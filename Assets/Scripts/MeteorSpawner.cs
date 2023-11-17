@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class MeteorSpawner : ObjectSpawnerBase
+public class MeteorSpawner : ObjectSpawnerRigidBodyBase
 {
     private float _spawnNext;
     private Camera _camera;
@@ -10,6 +10,9 @@ public class MeteorSpawner : ObjectSpawnerBase
     public float spawnRatePerMinute = 30;
     public float maxSpawnRatePerMinute = 60;
     public float spawnRateIncrement = 1;
+    public float minVelocitySpawn = 0;
+    public float maxVelocitySpawn = 10;
+    
     private new void Start()
     {
         _camera = Camera.main;
@@ -43,8 +46,11 @@ public class MeteorSpawner : ObjectSpawnerBase
         
         var randX = Random.Range(screenMin.x, screenMax.x);
         var spawnPosition = new Vector2(randX, transform.position.y);
-        var obj = GetPooledObject();
-        if (!obj) return;
+        var meteorRb = GetPooledObject();
+        if (meteorRb==null) return;
+        var rb = meteorRb.Item2;
+        rb.velocity = new Vector3(0, -Random.Range(minVelocitySpawn, maxVelocitySpawn), 0);
+        var obj = meteorRb.Item1;
         obj.transform.position = spawnPosition;
         obj.transform.rotation = Quaternion.identity;
         obj.SetActive(true);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -799,7 +799,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.314816
   m_Height: 5.7550626
@@ -822,7 +822,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Height: 2.9
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 4358828788905686760, guid: 2a76e6f49104d644b9c179fd936f9d27, type: 3}
-  maxObjects: 50
+  maxObjects: 25
   delayMsBullet: 250
   bulletSpeed: 10
 --- !u!114 &1659902063
@@ -975,6 +975,14 @@ PrefabInstance:
     - target: {fileID: 5274308534800827424, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: m_Name
       value: MeteorSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
+      propertyPath: maxVelocitySpawn
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
+      propertyPath: minVelocitySpawn
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9074255151272571708, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: m_LocalPosition.x

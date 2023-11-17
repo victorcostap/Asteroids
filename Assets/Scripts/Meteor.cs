@@ -1,6 +1,7 @@
 ﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Meteor : PooledObject
 {
@@ -29,10 +30,16 @@ public class Meteor : PooledObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Bullet"))
+        switch (other.gameObject.tag)
         {
-            ScoreManager.instance.AddPoints(valuePoints);
-            gameObject.SetActive(false);
+            case "Bullet":
+                ScoreManager.instance.AddPoints(valuePoints);
+                gameObject.SetActive(false);
+                other.gameObject.SetActive(false);
+                break;
+            case "Player":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                break;
         }
     }
 }

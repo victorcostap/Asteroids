@@ -22,11 +22,11 @@ public class Bullet : PooledObject
         ReturnToPool();
     }
     
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Enemy"))
-        {
-            gameObject.SetActive(false);
-        }
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.tag.Equals("Enemy"))
+    //     {
+    //         gameObject.SetActive(false);
+    //     }
+    // }
 }

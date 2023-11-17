@@ -45,7 +45,7 @@ public class MeteorSpawner : ObjectSpawnerRigidBodyBase
         var (screenMin, screenMax) = GetCameraWorldPoint();
         
         var randX = Random.Range(screenMin.x, screenMax.x);
-        var spawnPosition = new Vector2(randX, transform.position.y);
+        var spawnPosition = new Vector3(randX, transform.position.y, gameObject.transform.position.z);
         var meteorRb = GetPooledObject();
         if (meteorRb==null) return;
         var rb = meteorRb.Item2;

@@ -9,12 +9,13 @@ public class ButtonUISceneLoader : MonoBehaviour
     
     public void NewGame()
     {
+        ScoreManager.instance.ResetScore();
         SceneManager.LoadScene(sceneNewGame);
     }
 
     public void Scores()
     {
-        
+        SceneManager.LoadScene(sceneScores);
     }
 
     public void Credits()

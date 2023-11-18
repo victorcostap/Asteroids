@@ -3,40 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance;
-    public TMP_Text scoreText;
+    public static ScoreManager instance = null;
     
-    public int score;
 
+    public int maxScores = 10;
+    public int score = 0;
+    
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     // Start is called before the first frame update
-    private void Start()
-    {
-        UpdateText();
-    }
     
-    // Update is called once per frame
-    void Update()
+    public void ResetScore()
     {
-        
+        score = 0;
     }
 
-    private void UpdateText()
+    public bool IsHighScore()
     {
-        scoreText.text = score.ToString();
-    }
-    
-    public void AddPoints(int points)
-    {
-        score += points;
-        UpdateText();
+        return score > PlayerPrefs.GetInt("HighScore" + maxScores, 0);
     }
 }

@@ -5,7 +5,7 @@ public class TextBobbing : MonoBehaviour
     public float verticalBobbingAmount = 0.1f;
     public float horizontalBobbingAmount = 0.1f;
     public float bobbingSpeed = 1f;
-    public float updateInterval = 0.5f; // Update every 0.5 seconds
+    public float updateInterval = 0.025f;
 
     private Vector3 _originalPosition;
     private float _timer = 0f;

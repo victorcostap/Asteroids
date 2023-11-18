@@ -2,6 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Meteor : PooledObject
 {
@@ -21,12 +22,19 @@ public class Meteor : PooledObject
         switch (other.gameObject.tag)
         {
             case "Bullet":
-                ScoreManager.instance.AddPoints(valuePoints);
+                ScoreTextManager.instance.AddPoints(valuePoints);
                 gameObject.SetActive(false);
                 other.gameObject.SetActive(false);
                 break;
             case "Player":
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                if (ScoreManager.instance.IsHighScore())
+                {
+                    SceneManager.LoadScene("AskPlayerName");
+                }
+                else
+                {
+                    SceneManager.LoadScene("TitleScreen");    
+                }
                 break;
         }
     }

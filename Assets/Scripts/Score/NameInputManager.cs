@@ -30,17 +30,15 @@ public class NameInputManager : MonoBehaviour
         {
             var currentScore = PlayerPrefs.GetInt("HighScore" + i, 0);
 
-            if (score > currentScore)
-            {
-                var tempScore = PlayerPrefs.GetInt("HighScore" + i, 0);
-                var tempName = PlayerPrefs.GetString("HighScoreName" + i, "");
+            if (score <= currentScore) continue;
+            var tempScore = PlayerPrefs.GetInt("HighScore" + i, 0);
+            var tempName = PlayerPrefs.GetString("HighScoreName" + i, "");
 
-                PlayerPrefs.SetInt("HighScore" + i, score);
-                PlayerPrefs.SetString("HighScoreName" + i, playerName);
+            PlayerPrefs.SetInt("HighScore" + i, score);
+            PlayerPrefs.SetString("HighScoreName" + i, playerName);
 
-                score = tempScore;
-                playerName = tempName;
-            }
+            score = tempScore;
+            playerName = tempName;
         }
     }
 }

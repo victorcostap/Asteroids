@@ -307,12 +307,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268009412}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23409033, y: -1.2895044, z: -2.1783638}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.271896, y: -139.21217, z: 736.4494}
+  m_LocalScale: {x: 107.957886, y: 107.957886, z: 107.957886}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 762962643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &348618283
 GameObject:
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 348618286}
   - component: {fileID: 348618285}
   m_Layer: 5
-  m_Name: AskPlayer
+  m_Name: HIghScore!!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 432261845}
   - component: {fileID: 432261844}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: NameInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,6 +738,7 @@ RectTransform:
   - {fileID: 2010812206}
   - {fileID: 432261843}
   - {fileID: 1678692876}
+  - {fileID: 268009414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1341,7 +1342,7 @@ GameObject:
   - component: {fileID: 1678692878}
   - component: {fileID: 1678692877}
   m_Layer: 5
-  m_Name: SubmitName
+  m_Name: SubmitNameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,7 +1531,7 @@ GameObject:
   - component: {fileID: 2010812208}
   - component: {fileID: 2010812207}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AskPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1658,7 +1659,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1504668600}
   - {fileID: 210505812}
-  - {fileID: 1821683675}
   - {fileID: 762962643}
   - {fileID: 1247808418}
-  - {fileID: 268009414}
+  - {fileID: 1821683675}

@@ -1293,12 +1293,24 @@ PrefabInstance:
       value: MeteorSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
+      propertyPath: maxObjects
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: maxVelocitySpawn
-      value: 1.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: minVelocitySpawn
-      value: 0.1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
+      propertyPath: spawnRateIncrement
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154879479245202575, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
+      propertyPath: maxSpawnRatePerMinute
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 9074255151272571708, guid: 29194fa9f512cd649a9af092ebc306c9, type: 3}
       propertyPath: m_LocalPosition.x

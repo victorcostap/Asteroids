@@ -1,6 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Bullet object.
+/// </summary>
 public class Bullet : PooledObject
 {
     private Rigidbody _rigidbody;

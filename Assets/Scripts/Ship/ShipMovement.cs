@@ -1,10 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handles ship movement
+/// </summary>
 public class ShipMovement : MonoBehaviour
 {    
 
+    /// <summary>
+    /// How fast the ship rotates
+    /// </summary>
     public float rotationSpeed = 10;
+    /// <summary>
+    /// How fast the ship moves forward and backwards
+    /// </summary>
     public float thrustForce = 5;
     private Rigidbody _rigidbody;
 
@@ -19,13 +28,10 @@ public class ShipMovement : MonoBehaviour
     {
         ProcessMovementShip();
     }
-
-    // private void OnTriggerEnter(Collider other){
-    //     if(other.gameObject.tag.Equals("Enemy")){
-    //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //     }
-    // }
-
+    
+    /// <summary>
+    /// Gets the axis rotation and thrust and add forces to the ship accordingly
+    /// </summary>
     private void ProcessMovementShip()
     {
         var rotation = rotationSpeed * Input.GetAxis("Rotation") * Time.deltaTime;

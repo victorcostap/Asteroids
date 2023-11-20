@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
+/// <summary>
+/// Updates a text with the list of the high scores
+/// </summary>
 public class ListScores : MonoBehaviour
 {
+    /// <summary>
+    /// Text to update
+    /// </summary>
     public TMP_Text text;
     
     // Start is called before the first frame update

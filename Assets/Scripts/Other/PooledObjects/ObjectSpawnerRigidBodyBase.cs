@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Specialization of ObjectSpawnerBase to handle objects with RigidBody components.
+/// This avoids having to get the RigidBody component each time is required.
+/// </summary>
 public class ObjectSpawnerRigidBodyBase : ObjectSpawnerBase
 {
     
@@ -18,7 +22,12 @@ public class ObjectSpawnerRigidBodyBase : ObjectSpawnerBase
             ReturnToPool(b);
         }
     }
-
+    
+    /// <summary>
+    /// Returns an object from the pool and its associated RigidBody.
+    /// If there are no objects left in the pool, return null.
+    /// </summary>
+    /// <returns>Tuple of the GameObject and its RigidBody if there are available objects in the pool, null otherwise</returns>
     public new Tuple<GameObject, Rigidbody> GetPooledObject()
     {
         var b = base.GetPooledObject();

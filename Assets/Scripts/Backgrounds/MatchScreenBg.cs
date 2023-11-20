@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Script takes a material and modifies the tiling to make it match the screen size.
+/// This is done everytime the screen changes.
+/// </summary>
 public class MatchScreenBg : MonoBehaviour
 {
     private Vector2 _screenResolution;
@@ -7,8 +11,12 @@ public class MatchScreenBg : MonoBehaviour
     private float _objectWidth;
     private float _objectHeight;
     private float _aspectRatio;
-    public Material material;
     private static readonly int MainTex = Shader.PropertyToID("_MainTex");
+    
+    /// <summary>
+    /// Material to match to the screen
+    /// </summary>
+    public Material material;
 
     // Start is called before the first frame update
     private void Start()
@@ -39,6 +47,9 @@ public class MatchScreenBg : MonoBehaviour
         _screenResolution.y = Screen.height;
     }
 
+    /// <summary>
+    /// Calculates the tiling needed to scale the texture to the screen size
+    /// </summary>
     private void MatchPlaneToScreenSize()
     {
         var planeHeightScale = 2.0f * _camera.orthographicSize / 10.0f;

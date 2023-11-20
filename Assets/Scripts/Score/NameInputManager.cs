@@ -1,12 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Enable the player to write their name and submit it to the high scores along with their score.
+/// </summary>
 public class NameInputManager : MonoBehaviour
 {
+    /// <summary>
+    /// Input field where to write the name
+    /// </summary>
     public TMP_InputField nameField;
     
     // Start is called before the first frame update
@@ -14,7 +18,10 @@ public class NameInputManager : MonoBehaviour
     {
         nameField.text = "";
     }
-
+    
+    /// <summary>
+    /// Save player name and their score adn return to TitleScreen
+    /// </summary>
     public void SubmitName()
     {
         var playerName = nameField.text;
@@ -22,6 +29,10 @@ public class NameInputManager : MonoBehaviour
         SceneManager.LoadScene("TitleScreen");
     }
 
+    /// <summary>
+    /// Calculate player score position in leaderboard and assign it
+    /// </summary>
+    /// <param name="playerName">Player name that ahs achieved the high score</param>
     private void SavePlayerScore(string playerName)
     {
         var score = ScoreManager.instance.score;

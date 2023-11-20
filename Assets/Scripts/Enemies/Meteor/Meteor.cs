@@ -1,21 +1,15 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
+/// <summary>
+/// Meteor object. Handles collisions with Bullets and with the Player.
+/// </summary>
 public class Meteor : PooledObject
 {
-    private Collider _collider;
-    private Rigidbody _rigidbody;
-
+    /// <summary>
+    /// Numeric value to sum to the score when is destroyed
+    /// </summary>
     public int valuePoints = 100;
-    
-    private void Start()
-    {
-        _collider = gameObject.GetComponent<Collider>();
-        _rigidbody = this.gameObject.GetComponent<Rigidbody>();
-    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -27,14 +21,8 @@ public class Meteor : PooledObject
                 other.gameObject.SetActive(false);
                 break;
             case "Player":
-                if (ScoreManager.instance.IsHighScore())
-                {
-                    SceneManager.LoadScene("AskPlayerName");
-                }
-                else
-                {
-                    SceneManager.LoadScene("TitleScreen");    
-                }
+                // If there is a high score, ask for player name, if not, return to title
+                SceneManager.LoadScene(ScoreManager.instance.IsHighScore() ? "AskPlayerName" : "TitleScreen");
                 break;
         }
     }

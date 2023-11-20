@@ -1,6 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Script must be part of every object that is going to be pooled.
+/// </summary>
 public class PooledObject : MonoBehaviour
 {
     private ObjectSpawnerBase _objectSpawnerBase;

@@ -1,10 +1,25 @@
 using UnityEngine;
 
+/// <summary>
+/// Makes text move horizontally and vertically at a specific rate
+/// </summary>
 public class TextBobbing : MonoBehaviour
 {
+    /// <summary>
+    /// Max change in vertical position
+    /// </summary>
     public float verticalBobbingAmount = 0.1f;
+    /// <summary>
+    /// Max change in horizontal postiicon
+    /// </summary>
     public float horizontalBobbingAmount = 0.1f;
+    /// <summary>
+    /// Speed of position change
+    /// </summary>
     public float bobbingSpeed = 1f;
+    /// <summary>
+    /// How often to update the position, in seconds
+    /// </summary>
     public float updateInterval = 0.025f;
 
     private Vector3 _originalPosition;

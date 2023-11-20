@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Clamps the gameObject to the screen
+/// </summary>
 public class ScreenMovementClamp : MonoBehaviour
 {
     private Camera _camera;
     private Vector2 _screenBounds;
-
-    // private float _objectWidth;
-    // private float _objectHeight;
     private Vector2 _screenResolution;
 
     private void Start()
@@ -17,9 +17,6 @@ public class ScreenMovementClamp : MonoBehaviour
             Debug.LogError("No main camera found.");
             return;
         }
-
-        // _objectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x;
-        // _objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y;
 
         _screenResolution = new Vector2(Screen.width, Screen.height);
         _screenBounds = _camera.ScreenToWorldPoint(new Vector3(Screen.width,

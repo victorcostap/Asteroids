@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Handles pause manu and it buttons. When active, time is stopped.
-/// It open pressing the escape key.
+/// Handles pause menu and it buttons. When active, time is stopped.
+/// It can be toggled by pressing the escape key.
 /// </summary>
 public class PauseMenu : MonoBehaviour
 {

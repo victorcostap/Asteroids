@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Singleton handling the score tracking
+/// Singleton managing the score tracking
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
